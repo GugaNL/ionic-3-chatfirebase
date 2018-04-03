@@ -7,12 +7,39 @@
   </ion-navbar>
 </ion-header>
 
+<ion-toolbar>
+  <ion-segment [(ngModel)] = "visao" >
+    <ion-segment-button value="chats">Chats</ion-segment-button>
+    <ion-segment-button value="contatos">Contatos</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<!--<ion-toolbar>
+ <ion-searchbar (ionInput)="filtroContato($event)"></ion-searchbar>
+</ion-toolbar>-->
+
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+   
+  <div [ngSwitch]="visao">
+     
+    <ion-list *ngSwitchCase="'chats'" no-lines>
+      <button ion-item *ngFor="let chat of chats  | async" (click)="abreChatExistente(chat)">
+        <h2><b>{{ chat.titulo }}</b></h2>
+        <p *ngIf="chat.ultimaMensagem == ' '; else templateElse">Sem Mensagens</p>
+        <ng-template #templateElse>
+          <p>{{ chat.timeStamp | date:'dd/MM/y H:mm' }} - <i>{{ chat.ultimaMensagem }}</i></p>
+        </ng-template>        
+      </button>
+    </ion-list>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <ion-list *ngSwitchCase="'contatos'" no-lines>
+        <button ion-item *ngFor="let usuario of usuarios | async" (click)="paginaChat(usuario)">
+          {{ usuario.nome }}
+        </button>
+      </ion-list>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  </div>
+    
+  <button ion-button block (click)="logout()">Logout</button>
+  
 </ion-content>

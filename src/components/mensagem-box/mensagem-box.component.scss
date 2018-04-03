@@ -1,0 +1,24 @@
+mensagem-box {
+
+    display: flex;
+    margin-bottom: 10px;
+
+    .texto{
+        background-color: #efefef;
+        padding: 7px 5px;
+        box-shadow: 1px 1px 3px #ccc;
+        color: darkgrey
+        p{
+            font-size: 1.1em;
+            margin: 0;
+        }
+        p.timeStamp{
+            font-size: 0.8em;
+            margin-top: 5px;
+            color: lightgrey
+        }
+    }
+    .remetente-background{                
+        background-color: #baf46e;
+    }
+}

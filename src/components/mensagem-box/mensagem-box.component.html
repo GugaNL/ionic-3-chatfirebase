@@ -1,0 +1,4 @@
+<div class="texto" [ngClass]="{'remetente-background': isRemetente}">
+  <p>{{ mensagem.text }}</p>
+  <p class="timeStamp">{{ mensagem.timeStamp | date:'dd/MM/y H:mm' }}</p>
+</div>

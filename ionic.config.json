@@ -1,6 +1,6 @@
 {
   "name": "CursoIonicChatFirebase",
-  "app_id": "",
+  "app_id": "4911cb5e",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
