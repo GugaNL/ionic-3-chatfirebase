@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController  } from 'ionic-angular';
 import { PaginaSignUpPage } from '../pagina-sign-up/pagina-sign-up';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -21,7 +21,8 @@ export class PaginasigninPage {
     public navParams: NavParams,
     public formBuilder: FormBuilder,
     public fireauth: AngularFireAuth,
-    public userservice: UserService
+    public userservice: UserService,
+    private alertCtrl: AlertController
   ) {
     let emailPattern = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
     this.formGroupSignIn = this.formBuilder.group({
@@ -51,6 +52,13 @@ export class PaginasigninPage {
         this.navCtrl.setRoot(HomePage);
       }).catch((error: any) => {
         loading.dismiss();
+        this.alertCtrl.create({
+          title: "Erro no login",
+          message: "Usuário ou senha inválido(s)",
+          buttons: [
+            "Ok"
+          ]
+        }).present()
         console.log(error);
       });
   }
