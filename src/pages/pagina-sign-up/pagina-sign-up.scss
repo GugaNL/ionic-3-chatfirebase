@@ -1,3 +1,32 @@
-page-pagina-sign-up {
+.signup-wallpaper {
+    background-image: linear-gradient(to left, #0a0d79, #0d71bf);
+    background-size: cover;
+ }
 
-}
+ .signup-title {
+    padding-left: 80px;
+ }
+
+.input-icon{
+    padding-top: 20px;
+    color: #87CEFA;
+ }
+
+ .signup-card {
+     height: 300px;
+     border-radius: 7px;
+ }
+
+ .signup-div-button {
+     text-align: center;
+ }
+
+ .signup-button {
+    background-image: linear-gradient(to left, #F4A460, #4B0082);
+    opacity: 8;
+    width: 200px;
+ }
+
+ .signup-item {
+     width: 350px;
+ }

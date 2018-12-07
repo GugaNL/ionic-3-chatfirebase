@@ -18,7 +18,6 @@ import { ChatproviderProvider } from '../providers/chatprovider/chatprovider';
 import { MensagemBoxComponent } from '../components/mensagem-box/mensagem-box.component';
 import { UsuarioInfoComponent } from '../components/usuario-info/usuario-info.component';
 import { UserMenuComponent } from '../components/user-menu/user-menu.component';
-import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 
 const firebaseConfig: FirebaseAppConfig = {
@@ -30,11 +29,7 @@ const firebaseConfig: FirebaseAppConfig = {
   messagingSenderId: "318664095913"
 };
 
-const cloudSettings: CloudSettings = {
-  'core': {
-    'app_id': 'APP_ID'
-  }
-};
+
 
 
 @NgModule({

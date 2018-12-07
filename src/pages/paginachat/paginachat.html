@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Conversa</ion-title>
+    <ion-title class="chat-title">Conversa</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -14,7 +14,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-item no-lines>
+    <ion-item>
       <ion-input type="text" placeholder="Digite a mensagem.." [(ngModel)]="newMessage"></ion-input>
       <button ion-button item-right (click)="enviaMensagem(newMessage); newMessage=''">
         <ion-icon name="send"></ion-icon>

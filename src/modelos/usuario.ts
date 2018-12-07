@@ -6,7 +6,8 @@ export class Usuario{
         public email: string,
         public senha: string,
         public uid: string,
-        public key: string
+        public key: string,
+        public foto: string
     )
     {     
 

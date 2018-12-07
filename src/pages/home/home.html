@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-toolbar>
-  <ion-segment [(ngModel)] = "visao" >
+  <ion-segment [(ngModel)]="visao">
     <ion-segment-button value="chats">Chats</ion-segment-button>
     <ion-segment-button value="contatos">Contatos</ion-segment-button>
   </ion-segment>
@@ -18,28 +18,37 @@
  <ion-searchbar (ionInput)="filtroContato($event)"></ion-searchbar>
 </ion-toolbar>-->
 
-<ion-content padding>
-   
+<ion-content padding class="home-content">
+
   <div [ngSwitch]="visao">
-     
+
     <ion-list *ngSwitchCase="'chats'" no-lines>
-      <button ion-item *ngFor="let chat of chats  | async" (click)="abreChatExistente(chat)">
-        <h2><b>{{ chat.titulo }}</b></h2>
-        <p *ngIf="chat.ultimaMensagem == ' '; else templateElse">Sem Mensagens</p>
-        <ng-template #templateElse>
-          <p>{{ chat.timeStamp | date:'dd/MM/y H:mm' }} - <i>{{ chat.ultimaMensagem }}</i></p>
-        </ng-template>        
-      </button>
+      <ion-card class="card-home" *ngFor="let chat of chats  | async" (click)="abreChatExistente(chat)">
+        <ion-item class="home-item">
+          <h2><b>{{ chat.titulo }}</b></h2>
+          <p *ngIf="chat.ultimaMensagem == ' '; else templateElse">Sem Mensagens</p>
+          <ng-template #templateElse>
+            <p>{{ chat.timeStamp | date:'dd/MM/y H:mm' }} - <i>{{ chat.ultimaMensagem }}</i></p>
+          </ng-template>
+          <ion-icon name="ios-chatbubbles" item-end color="primary"></ion-icon>
+        </ion-item>
+      </ion-card>
     </ion-list>
 
     <ion-list *ngSwitchCase="'contatos'" no-lines>
-        <button ion-item *ngFor="let usuario of usuarios | async" (click)="paginaChat(usuario)">
+      <ion-card class="card-home" *ngFor="let usuario of usuarios | async" (click)="paginaChat(usuario)">
+        <ion-item  class="home-item">
+          <ion-avatar item-start>
+            <img src="{{usuario.foto}}" />
+          </ion-avatar>
           {{ usuario.nome }}
-        </button>
-      </ion-list>
+          <ion-icon name="ios-person" item-end color="primary"></ion-icon>
+        </ion-item>
+      </ion-card>
+    </ion-list>
 
   </div>
-    
-  <button ion-button block (click)="logout()">Logout</button>
-  
+
+  <button ion-button block (click)="logout()" round class="home-button">Logout</button>
+
 </ion-content>

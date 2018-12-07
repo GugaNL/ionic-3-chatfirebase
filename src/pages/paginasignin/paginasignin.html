@@ -1,36 +1,38 @@
-<ion-header>
+<ion-header class="header-login">
 
-  <ion-navbar>
+  <ion-navbar color='navbarColor'>
     <ion-title>Faça seu Login</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="login-wallpaper">
 
   <h1 text-center>
-    <ion-icon class="auth-icon" name="chatboxes" color="primary"></ion-icon>
+    <ion-icon class="login-icon" name="chatboxes"></ion-icon>
   </h1>
 
   <form [formGroup]="formGroupSignIn" (ngSubmit)="onSubmit()">
+    <ion-card class="card-login">
+      <ion-item class="login-item">
+        <ion-icon name="mail" item-left color="primary" class="input-icon"></ion-icon>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="mail" item-left color="primary"></ion-icon>
-      <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name="lock" item-left color="primary"></ion-icon>
-      <ion-input type="password" placeholder="Senha" formControlName="senha"></ion-input>
-    </ion-item>
-
+      <ion-item class="login-item">
+        <ion-icon name="lock" item-left color="primary" class="input-icon"></ion-icon>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="senha"></ion-input>
+      </ion-item>
+    </ion-card>
     <br>
 
-    <button ion-button block type="submit" [disabled]="formGroupSignIn.invalid">Entrar</button>
+    <button ion-button block type="submit" [disabled]="formGroupSignIn.invalid" round>Entrar</button>
 
   </form>
   <br>
-  <button ion-button block clear (click)="abrePaginaSignUp()">Criar Conta</button>
+  <button ion-button block clear (click)="abrePaginaSignUp()" class="button-signup">Criar Conta</button>
 
 </ion-content>

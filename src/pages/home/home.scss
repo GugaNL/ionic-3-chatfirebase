@@ -1,3 +1,19 @@
-page-home {
+.home-content {
+    background-image: url(../../assets/imgs/chat-wallpaper.png);
+    background-size: 400px;
+}
 
+.home-item {
+    background-color: transparent !important;
+    color: #00008B;
+}
+
+.card-home {
+    border-radius: 10px;
+    background-image: url(../../assets/imgs/card-chat-backgroung.png);
+    background-size: 100px;
+}
+
+.home-button {
+    background-image: linear-gradient(to left, #0a0d79, #0d71bf);
 }

@@ -1,3 +1,33 @@
-page-paginasignin {
-
-}
+.input-icon{
+    padding-top: 20px;
+    color: #87CEFA;
+ }
+ 
+ .login-wallpaper {
+    //background-image: linear-gradient(to left, #228B22, #0d71bf);
+    background-image: linear-gradient(331deg, #228B22, #0d71bf);
+    background-size: cover;
+ }
+ 
+ .card-login {
+    height: 150px;
+    border-radius: 7px;
+ }
+ 
+ .header-login {
+    text-align: center;
+ }
+ 
+ .login-icon {
+    color: #87CEFA;
+    font-size: 5.0em;
+ }
+ 
+ .button-signup {
+    color: #FFFFFF
+ }
+ 
+ .login-item {
+    width: 350px
+ }
+ 
